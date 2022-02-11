@@ -38,6 +38,7 @@ func printTrace(id uint64, name, arrow string, indent int) {
 var mu sync.Mutex
 var m = make(map[uint64]int)
 
+// 跟踪函数调用
 func Trace() func() {
 	pc, _, _, ok := runtime.Caller(1)
 	if !ok {
